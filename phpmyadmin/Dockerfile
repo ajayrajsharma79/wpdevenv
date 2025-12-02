@@ -19,7 +19,8 @@ WORKDIR /var/www/html
 
 ENV PMA_VERSION=5.2.1
 
-RUN wget https://files.phpmyadmin.net/phpMyAdmin/${PMA_VERSION}/phpMyAdmin-${PMA_VERSION}-all-languages.zip \
+RUN rm -rf /var/www/html/* \
+    && wget https://files.phpmyadmin.net/phpMyAdmin/${PMA_VERSION}/phpMyAdmin-${PMA_VERSION}-all-languages.zip \
     && unzip phpMyAdmin-${PMA_VERSION}-all-languages.zip \
     && mv phpMyAdmin-${PMA_VERSION}-all-languages/* . \
     && rm -rf phpMyAdmin-${PMA_VERSION}-all-languages.zip phpMyAdmin-${PMA_VERSION}-all-languages \
