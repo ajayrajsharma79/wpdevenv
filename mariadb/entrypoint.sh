@@ -6,7 +6,7 @@ if [ ! -d "/var/lib/mysql/mysql" ]; then
     mysql_install_db --user=mysql --datadir=/var/lib/mysql
 
     echo "Starting temporary server..."
-    mysqld_safe --skip-networking &
+    mariadbd --user=mysql --datadir=/var/lib/mysql --skip-networking &
     pid="$!"
 
     sleep 10
@@ -22,9 +22,13 @@ if [ ! -d "/var/lib/mysql/mysql" ]; then
 EOSQL
 
     echo "Stopping temporary server..."
-    kill "$pid"
+    if ! mysqladmin shutdown -u root --password="${MYSQL_ROOT_PASSWORD}"; then
+        echo "mysqladmin shutdown failed, trying kill..."
+        kill "$pid"
+    fi
+    
     wait "$pid"
 fi
 
 echo "Starting MariaDB..."
-exec mysqld --bind-address=0.0.0.0 --user=mysql
+exec mariadbd --bind-address=0.0.0.0 --user=mysql
