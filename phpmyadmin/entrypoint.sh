@@ -1,6 +1,3 @@
-# Use only for development and testing purposes, not for production deployments.
-# This Dockerfile sets up a phpMyAdmin instance on a Debian Trixie base image
-
 #!/bin/bash
 set -e
 
