@@ -1,3 +1,7 @@
+# Use only for development and testing purposes, not for production deployments.
+# This entrypoint script initializes the MariaDB database if it hasn't been set up yet,
+# creates a root user with the specified password, and starts the MariaDB server.
+
 #!/bin/bash
 set -e
 

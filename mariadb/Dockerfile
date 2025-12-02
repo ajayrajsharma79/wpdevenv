@@ -1,3 +1,5 @@
+# Use only for development and testing purposes, not for production deployments.
+# This Dockerfile sets up a MariaDB server on a Debian Trixie base image.
 FROM debian:trixie-slim
 
 RUN apt-get update && apt-get install -y mariadb-server && rm -rf /var/lib/apt/lists/*

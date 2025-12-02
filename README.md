@@ -63,3 +63,8 @@ To stop the containers and remove volumes (WARNING: this will delete your databa
 ```bash
 docker-compose down -v
 ```
+
+## License
+
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+

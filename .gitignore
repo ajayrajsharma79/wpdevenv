@@ -1,6 +1,6 @@
 # Environment Variables
 .env
-
+.env.local
 # Data Directories
 mariadb_data/
 wordpress_data/

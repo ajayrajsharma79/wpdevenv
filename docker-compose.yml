@@ -1,3 +1,7 @@
+# Use only for development and testing purposes, not for production deployments.
+# This docker-compose file sets up a WordPress development environment
+# with MariaDB as the database and phpMyAdmin for database management.
+
 services:
   mariadb:
     build: ./mariadb
